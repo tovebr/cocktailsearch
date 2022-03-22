@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchCocktails } from "../../actions";
+import CocktailsList from "../CocktailsList";
 import "./componentA.css";
 
-const ComponentA = ({ fetchCocktails }) => {
+const ComponentA = ({ fetchCocktails, drinks }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -22,9 +23,8 @@ const ComponentA = ({ fetchCocktails }) => {
         ></input>
       </div>
       <div className='cocktail-list'>
-        <p>Cosmo</p>
-        <p>GT</p>
-        <p>Screwdriver</p>
+        <h3>Cocktails</h3>
+        <CocktailsList drinks={drinks} />
       </div>
     </div>
   );
