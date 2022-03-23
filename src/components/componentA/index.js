@@ -4,7 +4,7 @@ import { fetchCocktails } from "../../actions";
 import CocktailsList from "../CocktailsList";
 import "./componentA.css";
 
-const ComponentA = ({ fetchCocktails, drinks }) => {
+const ComponentA = ({ fetchCocktails, drinks, isLoading }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -16,6 +16,7 @@ const ComponentA = ({ fetchCocktails, drinks }) => {
     };
   }, [searchTerm, fetchCocktails]);
 
+  console.log(isLoading);
   return (
     <div className='component component-a'>
       <div className='search'>
@@ -28,35 +29,15 @@ const ComponentA = ({ fetchCocktails, drinks }) => {
         ></input>
       </div>
       <div className='cocktail-list'>
-        <CocktailsList drinks={drinks} />
+        {isLoading ? <div>Loading...</div> : <CocktailsList drinks={drinks} />}
       </div>
     </div>
   );
 };
-/* class ComponentA extends React.Component {
-  componentDidMount() {
-    this.props.fetchCocktails();
-  }
-  render() {
-    return (
-      <div className='component'>
-        <div className='search'>
-          <h1>Cocktail Search!</h1>
-          <input type='text' placeholder='start typing to search...'></input>
-        </div>
-        <div className='cocktail-list'>
-          <p>Cosmo</p>
-          <p>GT</p>
-          <p>Screwdriver</p>
-        </div>
-      </div>
-    );
-  }
-} */
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return { drinks: state.drinks };
+  return { drinks: state.drinks.drinks, isLoading: state.drinks.isLoading };
 };
 
 export default connect(mapStateToProps, { fetchCocktails })(ComponentA);

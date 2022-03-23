@@ -33,7 +33,7 @@ const CocktailsList = ({ drinks }) => {
       </React.Fragment>
     );
   }
-  return <div className='placeholder'>No results yet...</div>;
+  return <div></div>;
 };
 
 export default CocktailsList;
