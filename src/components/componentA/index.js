@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { fetchCocktails } from "../../actions";
+import React, { useEffect, useState, useCallback } from "react";
+import { connect, useDispatch } from "react-redux";
+import { fetchCocktails, setCocktails } from "../../actions";
 import CocktailsList from "../CocktailsList";
 import "./componentA.css";
 
-const ComponentA = ({ fetchCocktails, drinks, isLoading }) => {
+const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const timeOutId = setTimeout(() => {
-      searchTerm && fetchCocktails(searchTerm);
-    }, 1000);
-    return () => {
-      clearTimeout(timeOutId);
-    };
+    if (searchHistory[searchTerm]) {
+      console.log("rerender");
+      dispatch(setCocktails(searchHistory[searchTerm]));
+    } else {
+      const timeOutId = setTimeout(() => {
+        searchTerm && fetchCocktails(searchTerm);
+      }, 1000);
+      return () => {
+        clearTimeout(timeOutId);
+      };
+    }
   }, [searchTerm, fetchCocktails]);
 
-  console.log(isLoading);
   return (
     <div className='component component-a'>
       <div className='search'>
@@ -37,7 +42,13 @@ const ComponentA = ({ fetchCocktails, drinks, isLoading }) => {
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return { drinks: state.drinks.drinks, isLoading: state.drinks.isLoading };
+  return {
+    drinks: state.drinks.drinks,
+    isLoading: state.drinks.isLoading,
+    searchHistory: state.searchHistory,
+  };
 };
 
-export default connect(mapStateToProps, { fetchCocktails })(ComponentA);
+export default connect(mapStateToProps, { fetchCocktails, setCocktails })(
+  ComponentA
+);

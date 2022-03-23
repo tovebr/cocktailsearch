@@ -8,5 +8,17 @@ export const fetchCocktails = (searchTerm) => {
     ).then((res) => res.json());
 
     dispatch({ type: "FETCH_COCKTAILS_SUCCESS", payload: response });
+    dispatch({
+      type: "UPDATE_SEARCH_HISTORY",
+      payload: { response, searchTerm },
+    });
+  };
+};
+
+export const setCocktails = (prewiousResult) => {
+  console.log("action");
+  return {
+    type: "SET_COCKTAILS",
+    payload: prewiousResult,
   };
 };
