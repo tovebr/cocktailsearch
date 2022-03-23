@@ -1,0 +1,22 @@
+.cocktail-list {
+  text-align: center;
+  background-color: rgb(176, 252, 227);
+  width: 100%;
+}
+
+.placeholder {
+  padding: 2rem;
+}
+
+.table-headers th {
+  padding: 1rem;
+  background-color: rgb(97, 206, 170);
+}
+
+td {
+  padding: 1rem;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(212, 250, 237);
+}

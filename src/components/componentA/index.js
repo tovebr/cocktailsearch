@@ -8,13 +8,18 @@ const ComponentA = ({ fetchCocktails, drinks }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetchCocktails(searchTerm);
+    const timeOutId = setTimeout(() => {
+      searchTerm && fetchCocktails(searchTerm);
+    }, 1000);
+    return () => {
+      clearTimeout(timeOutId);
+    };
   }, [searchTerm, fetchCocktails]);
 
   return (
     <div className='component component-a'>
       <div className='search'>
-        <h1>Cocktail Search!</h1>
+        <h1 className='header'>Cocktail Search!</h1>
         <input
           type='text'
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -23,7 +28,6 @@ const ComponentA = ({ fetchCocktails, drinks }) => {
         ></input>
       </div>
       <div className='cocktail-list'>
-        <h3>Cocktails</h3>
         <CocktailsList drinks={drinks} />
       </div>
     </div>

@@ -1,27 +1,14 @@
+.component-a {
+  margin: 2rem 0;
+}
+
 .search {
-  width: 25rem;
+  width: 20rem;
   text-align: center;
+  padding: 2rem;
 }
 
 .search input {
-  width: 100%;
+  width: 18rem;
   padding: 1rem;
-}
-
-.cocktail-list {
-  text-align: center;
-  background-color: rgb(176, 252, 227);
-}
-
-.table-headers th {
-  padding: 1rem;
-  background-color: rgb(97, 206, 170);
-}
-
-td {
-  padding: 1rem;
-}
-
-tr:nth-child(odd) {
-  background-color: rgb(212, 250, 237);
 }
