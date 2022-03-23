@@ -16,9 +16,32 @@ export const fetchCocktails = (searchTerm) => {
 };
 
 export const setCocktails = (prewiousResult) => {
-  console.log("action");
   return {
     type: "SET_COCKTAILS",
     payload: prewiousResult,
+  };
+};
+export const dislikeCocktail = (drink) => {
+  return {
+    type: "ADD_DISLIKED",
+    payload: drink,
+  };
+};
+export const unDislikeCocktail = (drink) => {
+  return {
+    type: "UNDISLIKE",
+    payload: drink,
+  };
+};
+export const removeDislikedFromA = (drink) => {
+  return {
+    type: "REMOVE_DISLIKED_FROM_A",
+    payload: drink,
+  };
+};
+export const moveBackUndisliked = (drink) => {
+  return {
+    type: "MOVE_BACK_UNDISLIKED",
+    payload: drink,
   };
 };

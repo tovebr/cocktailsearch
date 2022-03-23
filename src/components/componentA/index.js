@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchCocktails, setCocktails } from "../../actions";
 import CocktailsList from "../CocktailsList";
@@ -10,7 +10,6 @@ const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
 
   useEffect(() => {
     if (searchHistory[searchTerm]) {
-      console.log("rerender");
       dispatch(setCocktails(searchHistory[searchTerm]));
     } else {
       const timeOutId = setTimeout(() => {

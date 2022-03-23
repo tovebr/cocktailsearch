@@ -3,14 +3,18 @@ import CocktailItem from "./CocktailItem";
 
 import "./CocktailsList.css";
 
-const CocktailsList = ({ drinks }) => {
+const CocktailsList = ({ drinks, status }) => {
   const drinksLimit = 3;
   const renderCocktails = () => {
     return drinks.length > 0
       ? drinks.map(
           (drink, i) =>
             i < drinksLimit && (
-              <CocktailItem key={drink.idDrink} cocktail={drink} />
+              <CocktailItem
+                key={drink.idDrink}
+                cocktail={drink}
+                status={status}
+              />
             )
         )
       : null;
@@ -19,13 +23,14 @@ const CocktailsList = ({ drinks }) => {
   if (drinks.length > 0) {
     return (
       <React.Fragment>
-        <h3 className='header'>Cocktails</h3>
+        {status !== "disliked" && <h3 className='header'>Cocktails</h3>}
         <table>
           <tbody>
             <tr className='table-headers'>
               <th>Name</th>
               <th>Percentage</th>
               <th>Instructions</th>
+              <th></th>
             </tr>
             {renderCocktails()}
           </tbody>
