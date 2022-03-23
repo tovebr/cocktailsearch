@@ -7,9 +7,12 @@ const CocktailsList = ({ drinks }) => {
   const drinksLimit = 3;
   const renderCocktails = () => {
     return drinks.length > 0
-      ? drinks.map((drink) => (
-          <CocktailItem key={drink.idDrink} cocktail={drink} />
-        ))
+      ? drinks.map(
+          (drink, i) =>
+            i < drinksLimit && (
+              <CocktailItem key={drink.idDrink} cocktail={drink} />
+            )
+        )
       : null;
   };
 
