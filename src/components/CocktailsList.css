@@ -1,7 +1,16 @@
 .cocktail-list {
   text-align: center;
-  background-color: rgb(176, 252, 227);
+  background-color: var(--light-peachy);
   width: 100%;
+  border-radius: 5px;
+}
+
+.cocktail-list table {
+  width: 100%;
+}
+
+.cocktail-list .header {
+  background-color: var(--light-peachy);
 }
 
 .placeholder {
@@ -10,13 +19,15 @@
 
 .table-headers th {
   padding: 1rem;
-  background-color: rgb(97, 206, 170);
+  background-color: var(--peachy);
+  border-radius: 2px;
 }
 
 td {
   padding: 1rem;
+  border-radius: 2px;
 }
 
 tr:nth-child(odd) {
-  background-color: rgb(212, 250, 237);
+  background-color: rgb(253, 243, 241);
 }

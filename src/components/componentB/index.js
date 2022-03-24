@@ -4,16 +4,20 @@ import { connect } from "react-redux";
 import CocktailsList from "../CocktailsList";
 
 const ComponentB = ({ disliked }) => {
-  return (
-    <div className='component component-b'>
-      <h3 className='header'>Bad Cocktails</h3>
-      <div className='cocktail-list'>
-        {disliked.length > 0 ? (
-          <CocktailsList drinks={disliked} status='disliked' />
-        ) : null}
+  if (disliked.length > 0) {
+    return (
+      <div className='component component-b'>
+        <h3 className='header'>Bad Cocktails</h3>
+        <div className='cocktail-list'>
+          {disliked.length > 0 ? (
+            <CocktailsList drinks={disliked} status='disliked' />
+          ) : null}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 };
 
 const mapStateToProps = (state) => {

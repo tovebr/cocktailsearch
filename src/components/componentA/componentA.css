@@ -1,14 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
 .component-a {
   margin: 2rem 0;
+  width: 100%;
 }
 
 .search {
-  width: 20rem;
+  width: 25rem;
   text-align: center;
   padding: 2rem;
 }
 
+input:focus {
+  outline-color: var(--peachy);
+  /* border: 1px solid var(--peachy); */
+}
+
+.search .header {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+  color: #333;
+  margin-top: 2rem;
+}
+
+.search .header::after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: -3rem;
+  height: 80%;
+  width: 130%;
+  background-color: var(--peachy);
+  transform: skew(-15deg, -15deg) rotate(9deg);
+  z-index: -1;
+}
+.search .header::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: -3rem;
+  height: 70%;
+  width: 130%;
+  background-color: var(--light-peachy);
+  transform: skew(15deg, 15deg) rotate(-7deg);
+  z-index: -2;
+}
+
 .search input {
+  margin-top: 2rem;
   width: 18rem;
   padding: 1rem;
+  border: none;
+  border-radius: 5px;
 }
