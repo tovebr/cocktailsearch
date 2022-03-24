@@ -4,8 +4,8 @@
 }
 
 :root {
-  --turqoise: rgb(107, 238, 223);
-  --peachy: rgb(253, 176, 152);
+  --turqoise: rgba(107, 238, 223, 0.7);
+  --peachy: rgba(253, 176, 152);
   --light-peachy: rgb(252, 218, 203);
   --light-turqoise: rgb(150, 240, 229);
 }
