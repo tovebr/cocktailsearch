@@ -55,3 +55,7 @@ input:focus {
   border: none;
   border-radius: 5px;
 }
+
+.error-message {
+  padding: 2rem;
+}

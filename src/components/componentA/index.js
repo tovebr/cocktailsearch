@@ -13,7 +13,7 @@ const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
       dispatch(setCocktails(searchHistory[searchTerm]));
     } else {
       const timeOutId = setTimeout(() => {
-        searchTerm && fetchCocktails(searchTerm);
+        searchTerm && fetchCocktails(searchTerm.toLocaleLowerCase());
       }, 1000);
       return () => {
         clearTimeout(timeOutId);
@@ -33,7 +33,11 @@ const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
         ></input>
       </div>
       <div className='cocktail-list'>
-        {isLoading ? <div>Loading...</div> : <CocktailsList drinks={drinks} />}
+        {isLoading && <div>Loading...</div>}
+        {!isLoading && drinks && <CocktailsList drinks={drinks} />}
+        {!isLoading && !drinks && searchTerm && (
+          <p className='error-message'>No results found, try again!</p>
+        )}
       </div>
     </div>
   );
