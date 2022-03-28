@@ -5,29 +5,9 @@
   border-radius: 5px;
 }
 
-.cocktail-list table {
-  width: 100%;
-}
-
 .cocktail-list .header {
   background-color: var(--light-peachy);
 }
-
-.placeholder {
-  padding: 2rem;
-}
-
-.table-headers th {
-  padding: 1rem;
-  background-color: var(--peachy);
-  border-radius: 2px;
-}
-
-td {
-  padding: 1rem;
-  border-radius: 2px;
-}
-
-tr:nth-child(odd) {
-  background-color: rgb(253, 243, 241, 0.7);
+.cocktail-list table {
+  width: 100%;
 }
