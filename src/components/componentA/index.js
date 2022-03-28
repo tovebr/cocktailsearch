@@ -19,7 +19,7 @@ const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
         clearTimeout(timeOutId);
       };
     }
-  }, [searchTerm, fetchCocktails]);
+  }, [searchTerm]);
 
   return (
     <div className='component component-a'>
