@@ -1,6 +1,6 @@
 .cocktail-list {
   text-align: center;
-  background-color: var(--light-peachy);
+  background-color: var(--light-peachy-solid);
   width: 100%;
   border-radius: 5px;
 }
@@ -29,5 +29,5 @@ td {
 }
 
 tr:nth-child(odd) {
-  background-color: rgb(253, 243, 241);
+  background-color: rgb(253, 243, 241, 0.7);
 }

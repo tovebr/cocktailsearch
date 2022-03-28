@@ -32,7 +32,7 @@ input:focus {
   left: -3rem;
   height: 80%;
   width: 130%;
-  background-color: var(--peachy);
+  background-color: var(--peachy-solid);
   transform: skew(-15deg, -15deg) rotate(9deg);
   z-index: -1;
 }
@@ -43,13 +43,13 @@ input:focus {
   left: -3rem;
   height: 70%;
   width: 130%;
-  background-color: var(--light-peachy);
+  background-color: var(--light-peachy-solid);
   transform: skew(15deg, 15deg) rotate(-7deg);
   z-index: -2;
 }
 
 .search input {
-  margin-top: 2rem;
+  margin: 3rem 0 2rem 0;
   width: 18rem;
   padding: 1rem;
   border: none;
