@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import CocktailsList from "../CocktailsList";
+import CocktailsList from '../CocktailsList';
 
 const ComponentB = ({ disliked }) => {
   if (disliked.length > 0) {
@@ -9,9 +9,9 @@ const ComponentB = ({ disliked }) => {
       <div className='component component-b'>
         <h3 className='header'>Bad Cocktails</h3>
         <div className='cocktail-list'>
-          {disliked.length > 0 ? (
+          {disliked.length > 0 && (
             <CocktailsList drinks={disliked} status='disliked' />
-          ) : null}
+          )}
         </div>
       </div>
     );

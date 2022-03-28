@@ -1,15 +1,15 @@
 /* import cocktailsdb from "../apis/cocktailsdb"; */
 
 export const fetchCocktails = (searchTerm) => {
-  return async function (dispatch, getState) {
-    dispatch({ type: "FETCH_COCKTAILS_START" });
+  return async function (dispatch) {
+    dispatch({ type: 'FETCH_COCKTAILS_START' });
     const response = await fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
     ).then((res) => res.json());
 
-    dispatch({ type: "FETCH_COCKTAILS_SUCCESS", payload: response });
+    dispatch({ type: 'FETCH_COCKTAILS_SUCCESS', payload: response });
     dispatch({
-      type: "UPDATE_SEARCH_HISTORY",
+      type: 'UPDATE_SEARCH_HISTORY',
       payload: { response, searchTerm },
     });
   };
@@ -17,31 +17,31 @@ export const fetchCocktails = (searchTerm) => {
 
 export const setCocktails = (prewiousResult) => {
   return {
-    type: "SET_COCKTAILS",
+    type: 'SET_COCKTAILS',
     payload: prewiousResult,
   };
 };
 export const dislikeCocktail = (drink) => {
   return {
-    type: "ADD_DISLIKED",
+    type: 'ADD_DISLIKED',
     payload: drink,
   };
 };
 export const unDislikeCocktail = (drink) => {
   return {
-    type: "UNDISLIKE",
+    type: 'UNDISLIKE',
     payload: drink,
   };
 };
-export const removeDislikedFromA = (drink) => {
+export const removeDisliked = (drink) => {
   return {
-    type: "REMOVE_DISLIKED_FROM_A",
+    type: 'REMOVE_DISLIKED',
     payload: drink,
   };
 };
 export const moveBackUndisliked = (drink) => {
   return {
-    type: "MOVE_BACK_UNDISLIKED",
+    type: 'MOVE_BACK_UNDISLIKED',
     payload: drink,
   };
 };

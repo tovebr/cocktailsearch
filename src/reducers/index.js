@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import cocktailsReducer from "./cocktailsReducer";
-import searchHistoryReducer from "./searchHistoryReducer";
-import dislikedReducer from "./dislikedReducer";
+import { combineReducers } from 'redux';
+import cocktailsReducer from './cocktailsReducer';
+import searchHistoryReducer from './searchHistoryReducer';
+import dislikedReducer from './dislikedReducer';
 
 export default combineReducers({
   drinks: cocktailsReducer,

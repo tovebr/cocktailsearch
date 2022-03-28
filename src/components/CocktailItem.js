@@ -1,21 +1,21 @@
-import React from "react";
-import { connect, useDispatch } from "react-redux";
-import { BiDislike, BiLike } from "react-icons/bi";
+import React from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { BiDislike, BiLike } from 'react-icons/bi';
 import {
   dislikeCocktail,
   unDislikeCocktail,
-  removeDislikedFromA,
+  removeDisliked,
   moveBackUndisliked,
-} from "../actions";
-import "./CocktailItem.css";
+} from '../actions';
+import './CocktailItem.css';
 
 const CocktailItem = ({ cocktail, status }) => {
   const dispatch = useDispatch();
 
-  const handleDislikeClick = () => {
-    if (status !== "disliked") {
+  const handleLikeClick = () => {
+    if (status !== 'disliked') {
       dispatch(dislikeCocktail(cocktail));
-      dispatch(removeDislikedFromA(cocktail));
+      dispatch(removeDisliked(cocktail));
     } else {
       dispatch(unDislikeCocktail(cocktail));
       dispatch(moveBackUndisliked(cocktail));
@@ -28,11 +28,11 @@ const CocktailItem = ({ cocktail, status }) => {
       <td>{cocktail.strMeasure1}</td>
       <td>{cocktail.strInstructions}</td>
       <td>
-        {status !== "disliked" ? (
-          <BiDislike className='thumb-icon' onClick={handleDislikeClick} />
+        {status !== 'disliked' ? (
+          <BiDislike className='thumb-icon' onClick={handleLikeClick} />
         ) : (
-          <BiLike className='thumb-icon' onClick={handleDislikeClick} />
-        )}{" "}
+          <BiLike className='thumb-icon' onClick={handleLikeClick} />
+        )}{' '}
       </td>
     </tr>
   );
@@ -47,6 +47,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   dislikeCocktail,
   unDislikeCocktail,
-  removeDislikedFromA,
+  removeDisliked,
   moveBackUndisliked,
 })(CocktailItem);

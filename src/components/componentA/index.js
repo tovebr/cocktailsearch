@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
-import { fetchCocktails, setCocktails } from "../../actions";
-import CocktailsList from "../CocktailsList";
-import "./componentA.css";
+import React, { useEffect, useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { fetchCocktails, setCocktails } from '../../actions';
+import CocktailsList from '../CocktailsList';
+import './componentA.css';
 
 const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {

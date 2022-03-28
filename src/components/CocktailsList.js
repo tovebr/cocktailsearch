@@ -1,29 +1,21 @@
-import React from "react";
-import CocktailItem from "./CocktailItem";
+import React from 'react';
+import CocktailItem from './CocktailItem';
 
-import "./CocktailsList.css";
+import './CocktailsList.css';
 
 const CocktailsList = ({ drinks, status }) => {
   const drinksLimit = 3;
-  const renderCocktails = () => {
-    return drinks.length > 0
-      ? drinks.map(
-          (drink, i) =>
-            i < drinksLimit && (
-              <CocktailItem
-                key={drink.idDrink}
-                cocktail={drink}
-                status={status}
-              />
-            )
-        )
-      : null;
-  };
+  const cocktailsUI = drinks.map(
+    (drink, i) =>
+      i < drinksLimit && (
+        <CocktailItem key={drink.idDrink} cocktail={drink} status={status} />
+      )
+  );
 
   if (drinks.length > 0) {
     return (
       <React.Fragment>
-        {status !== "disliked" && <h3 className='header'>Cocktails</h3>}
+        {status !== 'disliked' && <h3 className='header'>Cocktails</h3>}
         <table>
           <tbody>
             <tr className='table-headers'>
@@ -32,7 +24,7 @@ const CocktailsList = ({ drinks, status }) => {
               <th>Instructions</th>
               <th></th>
             </tr>
-            {renderCocktails()}
+            {cocktailsUI}
           </tbody>
         </table>
       </React.Fragment>

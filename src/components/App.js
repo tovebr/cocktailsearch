@@ -1,6 +1,6 @@
-import React from "react";
-import ComponentA from "./componentA";
-import ComponentB from "./componentB";
+import React from 'react';
+import ComponentA from './componentA';
+import ComponentB from './componentB';
 
 function App() {
   return (
