@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { fetchCocktails, setCocktails } from '../../actions';
 import CocktailsList from '../CocktailsList';
 import './componentA.css';
 
-const ComponentA = ({ fetchCocktails, drinks, isLoading, searchHistory }) => {
+const ComponentA = ({
+  setCocktails,
+  fetchCocktails,
+  drinks,
+  isLoading,
+  searchHistory,
+}) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (searchHistory[searchTerm]) {
-      dispatch(setCocktails(searchHistory[searchTerm]));
+      setCocktails(searchHistory[searchTerm]);
     } else {
       const timeOutId = setTimeout(() => {
         searchTerm && fetchCocktails(searchTerm.toLocaleLowerCase());
