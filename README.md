@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Cocktail Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A site thet lets you search for cocktailrecipes!
 
-## Available Scripts
+## The instructions I followed to build it
 
-In the project directory, you can run:
+1. Create a search input in Component A.
+2. When the user types something in the search input run a function that fetches cocktails
+   where the searchterm matches the cocktails name.
+3. Show those cocktails in a table in Component A with a title "Cocktails".
+4. Each row in the table should have a column for the name of the cocktail, the alcohol
+   percentage and instruction on how to make the cocktail. All this should be available in the api.
+5. The fetch should start after the user has stopped typing for 1 second. This is to
+   prevent the fetch to run after each typed letter. It should be a debounced function so to say.
+6. Only show a maximum of three cocktails in the table.
+7. Show a loading text when the request is being processed.
+8. We also want to save the searchresult on each searchtearm in somekind of global state
+   (hint: React context or Redux).
+   If the user searched for something he or she already searched before, we should not use the
+   fetch call to the API. Instead we want to retrieve the searchresult from the global store and
+   show it instantly to the user.
+9. We now want to add a fourth column. Every row should have a fourth column with a "Dislike"
+   button. When pressing the "dislike" button the cocktail should now disappear from the "Cocktails"
+   table and show up in a new table in Component B. This table should have a title called "Bad Cocktails".
+10. The "Bad Cocktails" table should have the same 4 columns as the "Cocktails" table except that
+    the fourth column rows should contain a "Like" buttons instead of "Dislike" buttons.
+    When pressing a like button the function should now do the opposite of the "Dislike" button.
+    Disappear from the dislike table and reappear in the like table.
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Remember: the cocktails in each table should persist during each new search. If the user has "Disliked"
+a cocktail. That cocktail should only be visible in the "Dislike" table in Component B.
