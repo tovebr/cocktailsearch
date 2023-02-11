@@ -29,9 +29,9 @@ input:focus {
   content: '';
   position: absolute;
   top: 0.5rem;
-  left: -3rem;
+  left: -0.5rem;
   height: 80%;
-  width: 130%;
+  width: 100%;
   background-color: var(--peachy-solid);
   transform: skew(-15deg, -15deg) rotate(9deg);
   z-index: -1;
@@ -40,9 +40,9 @@ input:focus {
   content: '';
   position: absolute;
   top: 0.5rem;
-  left: -3rem;
+  left: -0.5rem;
   height: 70%;
-  width: 130%;
+  width: 100%;
   background-color: var(--light-peachy-solid);
   transform: skew(15deg, 15deg) rotate(-7deg);
   z-index: -2;
@@ -58,4 +58,14 @@ input:focus {
 
 .error-message {
   padding: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .search {
+    width: 100%;
+    padding: 0;
+  }
+  .search input {
+    width: 80%;
+  }
 }
