@@ -1,6 +1,7 @@
 # Cocktail Search
 
-A site thet lets you search for cocktailrecipes!
+A site thet lets you search for cocktailrecipes! 
+Try it out: https://tovebr.github.io/cocktailsearch/
 
 ## The instructions I followed to build it
 
@@ -27,5 +28,5 @@ A site thet lets you search for cocktailrecipes!
     When pressing a like button the function should now do the opposite of the "Dislike" button.
     Disappear from the dislike table and reappear in the like table.
 
-Remember: the cocktails in each table should persist during each new search. If the user has "Disliked"
-a cocktail. That cocktail should only be visible in the "Dislike" table in Component B.
+Remember: the cocktails in each table should persist during each new search. If the user has "Disliked" a cocktail. That cocktail should only be visible in the "Dislike" table in Component B.
+![cocktails](https://user-images.githubusercontent.com/70133569/218251826-ff30a491-034b-4ce1-958c-ae7b46cc586d.jpg)
