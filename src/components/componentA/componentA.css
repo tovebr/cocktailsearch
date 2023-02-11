@@ -61,11 +61,19 @@ input:focus {
 }
 
 @media screen and (max-width: 500px) {
+  .component-a {
+    margin: 0.5rem 0;
+  }
   .search {
     width: 100%;
     padding: 0;
   }
   .search input {
     width: 80%;
+  }
+  .search .header::after,
+  .search .header::before {
+    width: 90%;
+    left: 1rem;
   }
 }

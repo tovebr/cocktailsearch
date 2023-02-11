@@ -20,7 +20,7 @@ const CocktailsList = ({ drinks, status }) => {
           <tbody>
             <tr className='table-headers'>
               <th>Name</th>
-              <th>Percentage</th>
+              <th className='percentage'>Percentage</th>
               <th>Instructions</th>
               <th></th>
             </tr>

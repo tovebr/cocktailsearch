@@ -25,7 +25,7 @@ const CocktailItem = ({ cocktail, status }) => {
   return (
     <tr id={cocktail.idDrink}>
       <td>{cocktail.strDrink}</td>
-      <td>{cocktail.strMeasure1}</td>
+      <td className='percentage'>{cocktail.strMeasure1}</td>
       <td>{cocktail.strInstructions}</td>
       <td>
         {status !== 'disliked' ? (
